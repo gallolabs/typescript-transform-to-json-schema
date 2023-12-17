@@ -1,6 +1,6 @@
 {
   "name": "@gallolabs/typescript-transform-to-json-schema",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "dist/index.js",
   "dependencies": {
@@ -9,16 +9,19 @@
   "scripts": {
     "build": "rm -Rf dist && tsc",
     "test": "npm run build && cd test && rm -Rf dist && npx tspc && node dist",
-    "deploy": "npm run test && npm login && trap 'npm logout' EXIT && npm publish --access public"
+    "deploy": "npm run test && npm login && trap 'npm logout' EXIT && release-it --no-git.requireCleanWorkingDir"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "release-it": "^17.0.1",
     "ts-patch": "^3.1.1",
     "ttypescript": "^1.5.15",
     "typescript": "^5.3.3"
   },
-  "workspaces": ["."],
+  "workspaces": [
+    "."
+  ],
   "files": [
     "dist"
   ]
