@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "plugins": [
-      { "transform": ".." }
+      { "transform": "@gallolabs/typescript-transform-to-json-schema" }
     ],
     "target": "es2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "module": "commonjs",                                /* Specify what module code is generated. */

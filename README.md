@@ -4,13 +4,13 @@ Convert typescript type to jsonSchema during typescript compilation, using https
 
 ## Configure
 
-- Use ttypescript (because typescript does not support custom transformers)
+- Use ttypescript or ts-patch (because typescript does not support custom transformers)
 - Configure tsconfig.json
 ```json
 {
   "compilerOptions": {
     "plugins": [
-      { "transform": "@gallofeliz/typescript-transform-to-json-schema" }
+      { "transform": "@gallolabs/typescript-transform-to-json-schema" }
     ]
   }
 }
@@ -24,7 +24,7 @@ Convert typescript type to jsonSchema during typescript compilation, using https
 
 Resolve typescript type to JSON Schema :
 ```typescript
-import { tsToJsSchema } from '@gallofeliz/typescript-transform-to-json-schema';
+import { tsToJsSchema } from '@gallolabs/typescript-transform-to-json-schema';
 
 interface User {
     /** @pattern /a-zA-Z+/ */
@@ -63,7 +63,7 @@ console.log(schema);
 
 Then, we can have :
 ```typescript
-import { tsToJsSchema } from '@gallofeliz/typescript-transform-to-json-schema';
+import { tsToJsSchema } from '@gallolabs/typescript-transform-to-json-schema';
 
 type LightStatus = 'on' | 'off'
 

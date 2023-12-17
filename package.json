@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "rm -Rf dist && tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && cd test && rm -Rf dist && npx tspc && node dist",
+    "deploy": "npm run test && npm login && trap 'npm logout' EXIT && npm publish --access public"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,9 @@
     "ts-patch": "^3.1.1",
     "ttypescript": "^1.5.15",
     "typescript": "^5.3.3"
-  }
+  },
+  "workspaces": ["."],
+  "files": [
+    "dist"
+  ]
 }

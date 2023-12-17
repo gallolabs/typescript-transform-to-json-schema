@@ -1,4 +1,4 @@
-import { tsToJsSchema } from '..'
+import { tsToJsSchema } from '@gallolabs/typescript-transform-to-json-schema'
 
 interface Blog {
     id: number
